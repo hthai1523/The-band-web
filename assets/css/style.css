@@ -7,6 +7,7 @@
 
 html {
     font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* 
@@ -21,7 +22,7 @@ html {
 3. mau sac
 4. kieu dang' (kieu chu, hinh` tron, vuong,...)
  */
-
+/* Common */
 .clear {
     clear: both;
 }
@@ -30,18 +31,84 @@ html {
     color: #fff !important;
 }
 
+.text-center{
+    text-align: center !important; 
+}
+
+.pull-right{
+    float: right !important;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-third{
+    width: 33.3333333%;
+}
+
+.col-half{
+    width: 50%;
+}
+
+.col-full{
+    width: 100%;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16{
+    margin-top: 16px !important;
+}
+
+.btn {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: inline-block;
+    margin-top: 16px;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+
+/* Main */
 #main {
     width: 100%;
 }
 
+
+
 #header {
-    height: 46px;
     background-color: #000;
     position: fixed;
+    height: 46px;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
+    overflow: hidden;
 }
 
 #nav {
@@ -105,11 +172,26 @@ html {
     font-size: 14px;
 }
 
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     padding: 0 21px;
     float: right;
 }
 
+/* #header .mobile-menu-btn{
+    padding: 13px 21px;
+    float: right;
+} */
+
+
+#header .menu-icon,
 #header .search-icon {
     color: #fff;
     font-size: 20px;
@@ -117,9 +199,19 @@ html {
 
 }
 
+
 #header .search-btn:hover {
     cursor: pointer;
     background-color: #f44336;
+}
+
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
 }
 
 #slider {
@@ -152,13 +244,15 @@ html {
     margin-top: 25px;
 }
 
-#content {}
 
 #content .content-section {
     width: 800px;
-    padding: 64px 0;
+    max-width: 100%;
+    padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading {
@@ -183,16 +277,9 @@ html {
     line-height: 1.4;
 }
 
-#content .member-item {
-    float: left;
-    /* width: calc(100% / 3); */
-    width: 33.33333%;
-    text-align: center;
-}
 
 #content .member-list {
     margin-top: 48px;
-
 }
 
 #content .member-name {}
@@ -244,15 +331,10 @@ html {
 
 .places-list {
 
-    margin: 32px -8px 0;
-    padding-bottom: 48px;
+    margin-top: 32px ;
+    margin-bottom: 48px;
 }
 
-.place-item {
-    float: left;
-    width: 33.333333%;
-    padding: 0 8px;
-}
 
 .place-img {
     width: 100%;
@@ -284,23 +366,73 @@ html {
     margin-top: 15px;
 }
 
-.place-buy-btn {
-    color: #fff;
-    background-color: #000;
-    text-decoration: none;
-    padding: 8px 16px;
-    display: inline-block;
-    margin-top: 16px;
+
+
+
+/* Contact Form */
+.contact-content{
+    padding-top: 48px;
 }
 
-.place-buy-btn:hover {
-    background-color: #ccc;
-    color: #000;
+.contact-infor{
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.contact-infor i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* Map section */
+.map-section{
+    width: 100%;
+    filter: grayscale(50%);
 }
 
 /* Footer section */
 
-#footer {}
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list{
+    font-size: 24px;
+    
+}
+
+#footer .social-list a{
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+#footer .coppy-right a:hover,
+#footer .social-list a:hover{
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+#footer .coppy-right{
+    font-size: 15px;
+    margin: 15px 0;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .coppy-right a{
+    
+    color: rgba(0, 0, 0, 0.6);
+}
 
 .modal {
     position: fixed;
@@ -405,3 +537,4 @@ html {
         transform: translateY(0);
     }
 }
+
